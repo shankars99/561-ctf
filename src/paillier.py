@@ -2,7 +2,9 @@ import primelibpy
 from random import randint
 from math import gcd, lcm
 
-
+'''
+Inspired by: https://blog.openmined.org/the-paillier-cryptosystem/
+'''
 class Paillier:
     def __init__(self, digits=4):
         self.digits = digits
