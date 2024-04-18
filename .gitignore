@@ -19,3 +19,4 @@ docs/
 # Misc
 .vscode
 src/setup_account.js
+src/contracts.json
