@@ -1,2 +1,2 @@
 flask==3.0.0
-length-extension-tool==0.1.0
+web3==6.15.1
