@@ -42,10 +42,6 @@ contract EvilHackerDAO {
         owner = highestBalanceAddress;
     }
 
-    function getOwner() public view returns (address) {
-        return owner;
-    }
-
     function transfer(
         address _from,
         address _to,
@@ -54,5 +50,13 @@ contract EvilHackerDAO {
         require(balances[_from] >= _amount, "Insufficient balance");
         balances[_from] -= _amount;
         balances[_to] += _amount;
+    }
+
+    function getHackerBalance(address _address) public view returns (uint256) {
+        return balances[_address];
+    }
+
+    function getOwner() public view returns (address) {
+        return owner;
     }
 }
