@@ -42,16 +42,23 @@ def hacker_balance(address):
     hacker_balance = bh.get_hacker_balance(address)
     return str(hacker_balance)
 
+@app.route('/owner')
+def get_owner():
+    hacker_owner = bh.get_hacker_owner()
+    return str(hacker_owner)
+
 @app.route('/trade/<string:from_key>/<string:to_address>/<int:encrypted_token_value>')
 def trade(from_key, to_address, encrypted_token_value):
     token_value = int(dec_tokens(from_key, encrypted_token_value))
-    print(token_value)
     from_address = bh.gen_pub_from_priv(from_key)
-    print(from_address)
-    print(to_address)
-    bh.transfer_tokens(from_address, to_address, token_value)
+    tx_hash= bh.transfer_tokens(from_address, to_address, token_value)
+    return tx_hash
 
-    return "Trade successful"
+@app.route('/update')
+def update_owner():
+    tx_hash = bh.update_owner()
+
+    return tx_hash
 
 if __name__ == '__main__':
     app.run()

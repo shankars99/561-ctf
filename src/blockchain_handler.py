@@ -1,17 +1,18 @@
 from web3 import Web3
 from solcx import compile_source
+from hexbytes import HexBytes as hb
 
 w3 = Web3(Web3.HTTPProvider('http://localhost:8545'))
 pub_key_head = '0xAef9c71b2d81efF1ddE720f57360e0B36c1C9577'
 pub_key_right_hand = '0x9a89279AA5Be0F7320ae2f650FCfc4AB9427B783'
-
+pub_key_hero = '0xd5DA4652E012e5629A3491616cC89F4E7339bA05'
 
 public_key_bot = '0x5B0331ED799637DF524bbFC7943f112fB7354a86'
 private_key_bot = '96d9632f363564cc3032521409cf22a852f2032eec099ed5967c0d000cec607a'
 
 path_to_deploy = 'src/contracts/'
 contracts = ['EvilHackerDAO', 'EvilHackerWallet']
-hackers = [pub_key_head, pub_key_right_hand]
+hackers = [pub_key_head, pub_key_right_hand, pub_key_hero]
 
 contracts = {
     'EvilHackerDAO': {
@@ -88,7 +89,17 @@ def transfer_tokens(from_address: str, to_address: str, token_value: int):
 
     w3.eth.wait_for_transaction_receipt(tx_hash)
 
-    return tx_hash
+    return hb.hex(tx_hash)
+
+def update_owner():
+    contract = 'EvilHackerDAO'
+
+    EvilHackerDao = get_w3_contract(contract)
+    tx_hash = EvilHackerDao.functions.updateOwner().transact({'from': public_key_bot})
+
+    w3.eth.wait_for_transaction_receipt(tx_hash)
+
+    return hb.hex(tx_hash)
 
 def get_hacker_balance(public_key):
     contract = 'EvilHackerDAO'
@@ -98,3 +109,10 @@ def get_hacker_balance(public_key):
 
     return balance
 
+def get_hacker_owner():
+    contract = 'EvilHackerDAO'
+
+    EvilHackerDao = get_w3_contract(contract)
+    owner = EvilHackerDao.functions.owner().call()
+
+    return owner
