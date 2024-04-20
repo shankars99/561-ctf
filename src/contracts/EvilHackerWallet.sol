@@ -28,7 +28,6 @@ contract EvilHackerWallet {
         balances[msg.sender] = 0;
     }
 
-    // Helper function to check the balance of this contract
     function getBalance() public view returns (uint256) {
         return address(this).balance;
     }

