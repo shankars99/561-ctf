@@ -2,11 +2,11 @@ from web3 import Web3
 from solcx import compile_source
 
 w3 = Web3(Web3.HTTPProvider('http://localhost:8545'))
-pub_key_head = Web3.to_checksum_address('0xaef9c71b2d81eff1dde720f57360e0b36c1c9577')
-pub_key_right_hand = Web3.to_checksum_address('0x9a89279aa5be0f7320ae2f650fcfc4ab9427b783')
+pub_key_head = '0xAef9c71b2d81efF1ddE720f57360e0B36c1C9577'
+pub_key_right_hand = '0x9a89279AA5Be0F7320ae2f650FCfc4AB9427B783'
 
 
-public_key_bot = Web3.to_checksum_address('0x5b0331ed799637df524bbfc7943f112fb7354a86')
+public_key_bot = '0x5B0331ED799637DF524bbFC7943f112fB7354a86'
 private_key_bot = '96d9632f363564cc3032521409cf22a852f2032eec099ed5967c0d000cec607a'
 
 path_to_deploy = 'src/contracts/'
@@ -27,11 +27,10 @@ contracts = {
 }
 
 def get_balance(public_key):
-    public_key = Web3.to_checksum_address(public_key)
     return w3.eth.get_balance(public_key)
 
 def gen_pub_from_priv(private_key):
-    return w3.eth.account.from_key(private_key).address
+    return Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
 
 def read_contract(contract_name: str):
     with open(path_to_deploy + contract_name + ".sol", 'r') as f:
