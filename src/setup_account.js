@@ -1,22 +1,22 @@
 const users = [
     {
         // hacker boss
-        public: '0xaef9c71b2d81eff1dde720f57360e0b36c1c9577',
+        public: '0xAef9c71b2d81efF1ddE720f57360e0B36c1C9577',
         private: '24871679ddfa877966230f1ff4dbb93616b452c8a251b0c23e631d1c1e36f97d'
     },
     {
         // hacker right hand man
-        public: '0x9a89279aa5be0f7320ae2f650fcfc4ab9427b783',
+        public: '0x9a89279AA5Be0F7320ae2f650FCfc4AB9427B783',
         private: '3a1b906d49d4314442d61323a2c5b3a98d02033c20f493db0200e84e9cc23416'
         // sha256( sha256(john) + doe )
     },
     {
         // hacker bot
-        public: '0x5b0331ed799637df524bbfc7943f112fb7354a86',
+        public: '0x5B0331ED799637DF524bbFC7943f112fB7354a86',
         private: '96d9632f363564cc3032521409cf22a852f2032eec099ed5967c0d000cec607a'
     },
     {
-        public: '0xd5da4652e012e5629a3491616cc89f4e7339ba05',
+        public: '0xd5DA4652E012e5629A3491616cC89F4E7339bA05',
         private: 'ae6c79d10f1fd410650790e63186ec108fa106325b52fbd88de21a43540e6f2c'
         // sha256(b'hero')
     }
