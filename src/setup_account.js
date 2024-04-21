@@ -1,6 +1,6 @@
 const users = [
     {
-        // hacker boss
+        // hacker leader
         public: '0xAef9c71b2d81efF1ddE720f57360e0B36c1C9577',
         private: '24871679ddfa877966230f1ff4dbb93616b452c8a251b0c23e631d1c1e36f97d'
     },
