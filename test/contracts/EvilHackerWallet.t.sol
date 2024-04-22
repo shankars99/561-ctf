@@ -21,7 +21,7 @@ contract EvilHackerWalletTest is Test {
     uint256 balance = 1 * 10 ** 18;
     function setUp() public {
         vm.prank(hacker_leader);
-        hackerWallet = new EvilHackerWallet(hacker_bot);
+        hackerWallet = new EvilHackerWallet();
         vm.deal(hacker_right_hand, balance);
     }
 

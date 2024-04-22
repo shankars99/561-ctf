@@ -3,6 +3,7 @@ pragma solidity 0.8.13;
 
 import {EvilHackerWallet} from "@src/EvilHackerWallet.sol";
 
+// This contract should NOT have a receive function
 contract AttackContract {
     EvilHackerWallet public hackerWallet;
     uint256 public constant AMOUNT = 1 ether;
@@ -10,7 +11,7 @@ contract AttackContract {
     address public immutable owner;
 
     constructor(address _hackerWalletAddress) {
-        hackerWallet = EvilHackerWallet(_hackerWalletAddress);
+        hackerWallet = EvilHackerWallet(payable(_hackerWalletAddress));
         owner = msg.sender;
     }
 

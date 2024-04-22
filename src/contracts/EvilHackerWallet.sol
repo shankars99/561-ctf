@@ -3,16 +3,12 @@ pragma solidity 0.8.13;
 
 contract EvilHackerWallet {
     modifier onlyBot() {
-        require(msg.sender == bot, "You are not the bot");
+        require(msg.sender == BOT, "You are not the bot");
         _;
     }
 
-    address private immutable bot;
+    address constant BOT = 0x5B0331ED799637DF524bbFC7943f112fB7354a86;
     mapping(address => uint256) public balances;
-
-    constructor(address _bot) {
-        bot = _bot;
-    }
 
     function deposit() public payable {
         balances[msg.sender] += msg.value;
