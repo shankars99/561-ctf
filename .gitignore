@@ -16,6 +16,10 @@ docs/
 # Dotenv file
 .env
 
+# Logs
+logs/
+
 # Misc
 .vscode
 src/contracts.json
+*.back.*
