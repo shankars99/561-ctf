@@ -1,0 +1,32 @@
+home - home page
+http://127.0.0.1:5000 - the home page
+
+api - list the api endpoints
+http://127.0.0.1:5000/api
+
+game - describes the game
+http://127.0.0.1:5000/game
+
+hero - get a hint from Hero's poem. Also contains various account keys
+http://127.0.0.1:5000/hero
+
+owner - get the owner of the hacker organization (this should show your pub key to win)
+http://127.0.0.1:5000/owner
+
+enckey/{privkey} - get the public key of the cryptosystem
+http://127.0.0.1:5000/enckey
+
+deckey - get the private key of the cryptosystem
+http://127.0.0.1:5000/deckey/{privkey}
+
+pubkey/{privkey} - get the public key for a given private key
+http://127.0.0.1:5000/pubkey/{privkey}
+
+encrypt/{number} - get the encrypyted value of a number
+http://127.0.0.1:5000/encrypt/{number}
+
+votes/{privkey} - get the votes of an account with a given private key
+http://127.0.0.1:5000/votes/{privkey}
+
+trade/{from_privkey}/{to_pubkey}/{encrypted_number} - send number of votes from the privkey account to the pubkey account
+http://127.0.0.1:5000/trade/{from_privkey}/{to_pubkey}/{encrypted_number}
