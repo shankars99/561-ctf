@@ -58,3 +58,9 @@ def trade_votes(from_hacker_priv_key, to_hacker_pub_key, encrypted_amount):
     votes_map[from_hacker_pub_key] = paillier.sub(votes_map[from_hacker_pub_key], encrypted_amount)
     votes_map[to_hacker_pub_key] = paillier.add(votes_map[to_hacker_pub_key], encrypted_amount)
     return True
+
+def return_pub_key():
+    return paillier.pub_key
+
+def return_private_key():
+    return paillier.priv_key
