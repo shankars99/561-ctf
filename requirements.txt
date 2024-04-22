@@ -1,5 +1,6 @@
 flask==3.0.0
 primelibpy==2.2
-web3==6.15.1
-py_solc_x==2.0.2
 python-dotenv==1.0.1
+web3==6.15.1
+# py_solc_x==2.0.2
+# solc-select==1.0.4

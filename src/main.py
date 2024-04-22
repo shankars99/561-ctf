@@ -50,4 +50,4 @@ def trade(from_hacker_priv_key, to_hacker_pub_key, encrypted_token_value):
     return f'Trade successful: {state}'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(ip='127.0.0.1', port=5000)

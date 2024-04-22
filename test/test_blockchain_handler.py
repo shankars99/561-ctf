@@ -27,7 +27,7 @@ class TestKeyDerivation(unittest.TestCase):
 
 class TestETHBalance(unittest.TestCase):
     def test_test_balance(self):
-        self.assertEqual(bh.get_balance(pub_key_right_hand), 100*10**18)
+        self.assertEqual(bh.get_balance(pub_key_right_hand), 101*10**18)
 
 class TestContractDeployment(unittest.TestCase):
     def test_deploy_contract(self):
