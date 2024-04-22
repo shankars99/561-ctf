@@ -26,14 +26,16 @@ const users = [
 async function transferEth() {
     for (i = 0; i < users.length; i++) {
         var account = users[i];
-        var to = account.public.toLowerCase();
+        var to = account.public;
         web3.personal.importRawKey(account.private, 'lol');
+
+        amount = to === '0x5B0331ED799637DF524bbFC7943f112fB7354a86' ? '110' : '101';
 
         // Transfer ETH to the target account
         await web3.eth.sendTransaction({
             from: eth.accounts[0],
             to,
-            value: web3.toWei('100', 'ether')
+            value: web3.toWei(amount, 'ether')
         });
 
         // unlocked accounts indefinitely
