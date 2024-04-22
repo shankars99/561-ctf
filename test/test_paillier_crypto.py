@@ -5,7 +5,7 @@ import os
 try:
     sys.path.insert(0, os.path.join(os.path.dirname(
         os.path.dirname(os.path.realpath(__file__))), 'src'))
-    from paillier import Paillier
+    from paillier_crypto import Paillier
 except ImportError:
     print("Error: failed to import module")
     sys.exit(1)
