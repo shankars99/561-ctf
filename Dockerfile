@@ -11,5 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
+ENV FLAG=CTF_SDaT{CS561ROCKS}
+
 # Run the application
 CMD ["python", "src/main.py"]
