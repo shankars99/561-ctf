@@ -1,0 +1,26 @@
+name: HackTheDAO
+
+docker_image: localhost:56156/HackTheDAO
+
+description: |
+  author: Shankar Subramanian
+
+  Example Instruction:
+  This challenge is about exploiting common server side encryption keys, and about insecure cryptography schemes.
+
+  Step 1:
+    Connect to the website and navigate to /game to play the game or /api to view all the endpoints
+  Step 2:
+    Use curl commands to interact with the API. Remember the docs from the game. You have a lot of information here.
+  Step 3:
+    To reveal the flag submit to /flag the two parts of the private key, concatenated. Ex: lambda: 15, mu: 250, Flag: 15250
+
+value: 250
+
+category: Cryptography
+
+flag: CTF_SDaT{CS561ROCKS}
+
+hints:
+  - { content: "Hash the concatenated strings of Hash(john) and doe", cost: 50 }
+  - { content: "Paillier Encryption", cost: 50 }
